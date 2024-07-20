@@ -29,15 +29,16 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
   return (
     <>
+      // 更新頁面標題
       <Head>
-        <title>Next.js Conf 2022 Photos</title>
+        <title>SOYEO-ME Photos</title>
         <meta
           property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content="https://your-project-url.vercel.app/og-image.png"
         />
         <meta
           name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content="https://your-project-url.vercel.app/og-image.png"
         />
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
@@ -58,12 +59,12 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"></span>
             </div>
             <Logo />
+            // 更新頁面描述
             <h1 className="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
-              2022 Event Photos
+              SOYEO-ME Photo Gallery
             </h1>
             <p className="max-w-[40ch] text-white/75 sm:max-w-[32ch]">
-              Our incredible Next.js community got together in San Francisco for
-              our first ever in-person conference!
+              葉佩青真牛比.
             </p>
             <a
               className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
@@ -137,12 +138,14 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
 export default Home;
 
+
+// 在getStaticProps函数中，确保使用正确的文件夹名称
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
-    .sort_by("public_id", "desc")
-    .max_results(400)
-    .execute();
+      .expression('resource_type:image') // 获取所有图片资源
+      .sort_by("created_at", "desc") // 按创建时间排序，最新的在前
+      .max_results(400)
+      .execute();
   let reducedResults: ImageProps[] = [];
 
   let i = 0;
