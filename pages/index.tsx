@@ -59,7 +59,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"></span>
             </div>
             <Logo />
-            // 更新頁面描述
+
             <h1 className="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
               SOYEO-ME Photo Gallery
             </h1>
