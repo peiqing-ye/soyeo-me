@@ -105,32 +105,32 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <footer className="p-6 text-center text-white/80 sm:p-12">
         Thank you to{" "}
         <a
-          href="https://edelsonphotography.com/"
+          href="https://x.com/peiqing6888/"
           target="_blank"
           className="font-semibold hover:text-white"
           rel="noreferrer"
         >
           Peiqing
         </a>
-        ,{" "}
+        {" "}
         <a
-          href="https://www.newrevmedia.com/"
+          href=""
           target="_blank"
           className="font-semibold hover:text-white"
           rel="noreferrer"
         >
-          Jenny Morgan
+
         </a>
-        , and{" "}
+        {" "}
         <a
-          href="https://www.garysextonphotography.com/"
+          href="/"
           target="_blank"
           className="font-semibold hover:text-white"
           rel="noreferrer"
         >
-          Gary Sexton
+
         </a>{" "}
-        for the pictures.
+        .
       </footer>
     </>
   );
